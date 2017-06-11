@@ -13,7 +13,7 @@
     <td><b>Delete</td>
   </tr>
   <?php
-    include("includes/db.php");
+    include("../includes/db.php");
     $get_pro = "select * from products";
     $run_pro = mysqli_query($conn, $get_pro);
     $i = 0;
@@ -30,9 +30,9 @@
     <td><?php echo $i;?></td>
     <td><b><?php echo $pro_title;?></b></td>
     <td><?php echo $pro_cat;?></td>
-    <td><img src = "product_images/<?php echo $pro_image;?>"width= "50" height = "50"/></td>
+    <td><img src = "../product_images/<?php echo $pro_image;?>"width= "50" height = "50"/></td>
     <td><?php echo $pro_price;?></td>
-    <td><a href = "index.php?edit_pro=<?php $pro_id; ?>">Edit</a></td>
+    <td><a href = "index.php?edit_pro=<?php echo $pro_id; ?>">Edit</a></td>
     <td><a href = "delete_pro.php?delete_pro=<?php $pro_id;?>">Delete</a></td>
   </tr>
 <?php } ?>

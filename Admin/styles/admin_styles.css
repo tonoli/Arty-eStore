@@ -1,8 +1,8 @@
 body{
-	background-image: url('../images/background_admin.jpg');
+	/*background-image: url('../images/background_admin.jpg');*/
+	background: grey;
 	display:block;
 	vertical-align:baseline;
-	/*background: grey;*/
 }
 
 .main_wrapper{
@@ -15,21 +15,21 @@ body{
 	margin: auto;
 	width: 1000px;
 	height:100px;
-	background: yellow;
+	background: white;
 	border-bottom:5px groove orange;
 }
 
 h1{
 	text-align:center;
-	font-style: italic;
-	font-family:fantasy;
+	font-style: bold;
+	font-family:Times New Roman;
 	font-size: 60px;
 }
 
 #left{
 	width: 725px;
 	height:650px;
-	background-image:url('../images/img1.jpg');
+	/*background-image:url('../images/img1.jpg');*/
 	/*float:left;*/
 	margin-left: 42px;
 }

@@ -2,17 +2,17 @@
 $servername = "localhost";
 $username = "root";
 $password = "password";
-$dbname = "art_store";
+$dbname = "Arty_shop";
 
 // Check connection
 $conn = mysqli_connect($servername, $username, $password);
 echo "<br/>";
-if (!$conn)
-{
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
 echo "<br/>";
+
 // DataBase creation
 
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
@@ -24,25 +24,23 @@ if (mysqli_query($conn, $sql)) {
 }
 echo "<br/>";
 
+// Check connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn)
-{
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
 echo "<br/>";
-echo "<br/>";
+
 // Set Products Table
 $sql = "CREATE TABLE IF NOT EXISTS Products (
-product_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-product_title VARCHAR(50) NOT NULL,
-product_cat VARCHAR(50) NOT NULL,
-product_author VARCHAR(50) NOT NULL,
-product_image CHAR(255) NOT NULL,
-product_price INT(6) NOT NULL,
-product_desc TEXT NOT NULL,
-product_active INT(1)
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+price INT(6) NOT NULL,
+name VARCHAR(50) NOT NULL,
+description TEXT NOT NULL,
+img_path CHAR(255) NOT NULL,
+is_active INT(1)
 )";
+
 // Check table creation
 echo "<br  />";
 if (mysqli_query($conn, $sql)) {
@@ -51,6 +49,7 @@ if (mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br  />";
+
 // Set User Table
 $sql = "CREATE TABLE IF NOT EXISTS Users (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -73,23 +72,4 @@ if (mysqli_query($conn, $sql)) {
 }
 echo "<br  />";
 
-// Set categories table
-$sql = "CREATE TABLE IF NOT EXISTS Categories(
-Abstract CHAR(50) NOT NULL,
-Seascapes CHAR(50) NOT NULL,
-Landscapes CHAR(50) NOT NULL,
-Nude CHAR(50) NOT NULL,
-Minimalism CHAR(50) NOT NULL,
-Surrealism CHAR(50) NOT NULL,
-Cubism CHAR(50) NOT NULL
-)";
-
-// Check table creation
-echo "<br  />";
-if (mysqli_query($conn, $sql)) {
-    echo "Table Products created successfully";
-} else {
-    echo "Error creating table: " . mysqli_error($conn);
-}
-echo "<br  />";
 ?>

@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <?php
-include ("includes/db.php");
+include ("../includes/db.php");
 ?>
 <html>
 <head>
@@ -16,10 +16,6 @@ include ("includes/db.php");
 			<h2>Insert New Product Here</h2>
 		</td>
 	</tr>
-  <!-- <tr>
-		<td align = "right"><b>Product Id:</b></td>
-		<td><input type= "text" name = "product_id" size = "5" required/></td>
-	</tr> -->
 	<tr>
 		<td align = "right"><b>Product Title:</b></td>
 		<td><input type= "text" name = "product_title" size = "40" required/></td>
@@ -29,7 +25,7 @@ include ("includes/db.php");
 		<td><select name= "product_cat">
 			<option>Select a Category</option>
 			<?php
-				$get_cat = "SELECT * from categories";
+				$get_cat = "SELECT * from Categories";
 				$run_cat = mysqli_query($conn, $get_cat);
 				while($row_cat = mysqli_fetch_array($run_cat))
 				{

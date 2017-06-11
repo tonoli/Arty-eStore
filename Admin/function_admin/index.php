@@ -3,11 +3,11 @@
 	<head>
 		<meta charset = "utf-8"/>
 		<title> Online Art Gallery </title>
-		<link rel= "stylesheet" href= "styles/admin_styles.css" media = "all" />
+		<link rel= "stylesheet" href= "../styles/admin_styles.css" media = "all" />
 	</head>
 <body>
 	<div class = "main_wrapper">
-		<div id = "header"><h1>Manage your content</h1>
+		<div id = "header"><h1>Manage your content:</h1>
 			<!-- <img src = "images/admin.png" style= "width:130px; margin-top:-150px;""> -->
 	</div>
 			<div id = "right">
@@ -25,6 +25,8 @@
 					include("insert_product.php");
 				if (isset($_GET['view_product']))
 					include("view_product.php");
+				if (isset($_GET['edit_pro']))
+					include ("edit_pro.php");
 				?>
 			</div>
 </body>
