@@ -1,0 +1,200 @@
+
+/* --------------  CSS Resets -------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------- HOME CSS -------------- */
+
+/*
+	----  HELPER ----
+	Colors :
+	Red  - #f05a5b
+	Blue - #00B6F5
+	Yellow -
+
+	Fonts:
+	font-family: 'Kaushan Script', cursive;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Raleway', sans-serif;
+*/
+
+
+/* ----- GENERAL ----- */
+
+body {
+
+}
+
+
+
+.wrapper {
+	max-width: 1000px;
+	height: 800px;
+	margin: auto;
+	background-color: #f05a5b;
+}
+
+/* ----- HEADER ----- */
+
+.header {
+	border: solid 1px grey;
+}
+
+.brand-logo {
+	margin-left: 50px;
+	max-width: 200px;
+	width: 10%;
+	height: auto;
+}
+
+
+
+.nav-options{
+	text-align: right;
+	margin-top: 10px;
+	margin-right: 10px;
+	float: right;
+}
+
+.nav-options ul{
+	display: inline-block;
+}
+.nav-options ul li{
+	list-style: none;
+	display: inline-block;
+}
+.nav-options a {
+	text-decoration: none;
+	color: white;
+	padding: 8px;
+	margin: 5px;
+	font-size: 15px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.nav-options a:hover {
+	color: #00B6F5;
+}
+
+.account-log ul li a{
+	font-size: 10px !important;
+}
+
+#search-bar {
+	display: none;
+}
+
+.search {
+	color: white;
+	padding: 8px;
+	margin: 5px;
+	font-size: 15px;
+}
+
+.search form{
+	height: 12px;
+}
+
+
+.search:hover #search-bar{
+	display: inline;
+}
+
+.cart-bar{
+	margin-top: 20px;
+}
+
+
+/* ----- SIDERBAR ----- */
+
+.sider {
+	background-color: #00B6F5;
+	float: left;
+	width: 200px;
+	height: 800px;
+}
+.section-title {
+	text-align: center;
+	background-color: white;
+	font-size: 10px;
+	font-family: 'Lato', sans-serif;
+}
+.section-title h2 {
+	margin-top: 15px;
+}
+.products-nav {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.products-nav a {
+	text-decoration: none;
+	color: #000000;
+	margin: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+}
+
+.products-nav a:hover {
+	color: #FFFFFF;
+}
+
+
+
+/* ----- CONTENT ----- */
+
+.content {
+	background-color: grey;
+	float: left;
+	width: 800px;
+	height: 800px;
+}
+
+/* ----- FOOTER ----- */
+
+.footer {
+	background-color: #f05a5b;
+	width: 1000px;
+	height: 100px;
+	clear: both;
+}
