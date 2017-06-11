@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php
+	// Start the session
+	//session_start();
+
+	// Includes functions and db
 	include("functions/functions.php");
+//	include("functions/db.php");
 ?>
 
 <html lang='en'>
@@ -33,8 +38,8 @@
 								<input type="submit" name="Search" value="Search" />
 						</form>
 						</li>
-						<li><a href="#">Join</a></li>
-						<li><a href="#">Sign in</a></li>
+						<li><a href="/Arty/Front/register.php">Join</a></li>
+						<li><a href="/Arty/Front/login.php">Sign in</a></li>
 						<li><a href="#">About</a></li>
 					</ul>
 					</div>
