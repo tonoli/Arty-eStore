@@ -12,8 +12,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO $table (price, name, description, img_path)
-VALUES (250, 'Dejeuner sur l\'herbe', 'Le Déjeuner sur l\'herbe est un tableau d\'Édouard Manet achevé en 1863, d\'abord intitulé Le Bain, puis La Partie carrée.', 'img/dejeuner.jpg')";
+$sql = "INSERT INTO $table (price, description, img_path)
+VALUES (250, 'Le Déjeuner sherbe est un tableau d\'Édouard Manet achevé en 1863, d\'abord intitulé Le Bain, puis La Partie carrée.', 'img/dejeuner.jpg')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";

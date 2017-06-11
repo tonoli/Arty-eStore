@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "itonoli";
 $password = "password";
-$dbname = "Arty_shop";
+$dbname = "art_store";
 $table = "Products";
 
 // Connect to the DB
@@ -12,7 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Display fucntions
+Display fucntions
 
 	function get_product(){
 		global $conn;
@@ -23,10 +23,12 @@ if (!$conn) {
     	exit();
 		}
 		while ($row_products = mysqli_fetch_array($querry)){
-			$product_price = $row_products['price'];
-			$product_name = $row_products['name'];
-			$product_description = $row_products['description'];
-			$product_img = $row_products['img_path'];
+      $product_title = $row_products['product_title'];
+      $product_cat = $row_products['product_cat'];
+      $product_author = $row_products['product_author'];
+      $product_image = $row_products['product_image'];
+			$product_price = $row_products['product_price'];
+			$product_desc = $row_products['product_desc'];
 			echo "<img src='$product_img' title='$product_name'>";
 			echo "<p> Price : $ $product_price</p>";
 		}
