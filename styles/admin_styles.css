@@ -1,0 +1,54 @@
+body{
+	background-image: url('../images/background_admin.jpg');
+	display:block;
+	vertical-align:baseline;
+	/*background: grey;*/
+}
+
+.main_wrapper{
+	width: 1010px;
+	height:auto;
+	margin: auto;
+}
+
+#header{
+	margin: auto;
+	width: 1000px;
+	height:100px;
+	background: yellow;
+	border-bottom:5px groove orange;
+}
+
+h1{
+	text-align:center;
+	font-style: italic;
+	font-family:fantasy;
+	font-size: 60px;
+}
+
+#left{
+	width: 725px;
+	height:650px;
+	background-image:url('../images/img1.jpg');
+	/*float:left;*/
+	margin-left: 42px;
+}
+#right{
+	width: 275px;
+	height:670px;
+	float:right;
+	border-left:4px groove orange;
+}
+#right a{
+	color:white;
+	text-align:left;
+	font-size:18px;
+	font-family:Palantino;
+	padding:4px;
+	margin:6px;
+	display:block;
+
+}
+#right a:hover{text-decoration:underline; font-weight:bolder; color:orange;
+
+}
