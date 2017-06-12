@@ -32,7 +32,9 @@ if (!$conn)
 echo "Connected successfully";
 echo "<br/>";
 echo "<br/>";
-// Set Products Table
+
+/* ******************* Set Products Table ***************** */
+
 $sql = "CREATE TABLE IF NOT EXISTS Products (
 product_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
 product_title VARCHAR(50) NOT NULL,
@@ -46,12 +48,14 @@ product_active INT(1)
 // Check table creation
 echo "<br  />";
 if (mysqli_query($conn, $sql)) {
-    echo "Table Products created successfully";
+    echo "Table PRODUCTS created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br  />";
-// Set User Table
+
+/* ******************* Set Users Table ***************** */
+
 $sql = "CREATE TABLE IF NOT EXISTS Users (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
 userip VARCHAR(50) NOT NULL,
@@ -67,13 +71,14 @@ is_active INT(1)
 // Check table creation
 echo "<br  />";
 if (mysqli_query($conn, $sql)) {
-    echo "Table Products created successfully";
+    echo "Table USERS created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br  />";
 
-// Set categories table
+/* ******************* Categories Table ***************** */
+
 $sql = "CREATE TABLE IF NOT EXISTS Categories(
 Abstract CHAR(50) NOT NULL,
 Seascapes CHAR(50) NOT NULL,
@@ -87,9 +92,29 @@ Cubism CHAR(50) NOT NULL
 // Check table creation
 echo "<br  />";
 if (mysqli_query($conn, $sql)) {
-    echo "Table Products created successfully";
+    echo "Table CAEGORIES created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br  />";
+
+/* ******************* Cart Table ***************** */
+
+$sql = "CREATE TABLE IF NOT EXISTS Cart(
+product_id INT(10) NOT NULL,
+user_ip CHAR(50) NOT NULL,
+user_id CHAR(50)
+is_active INT(1)
+)";
+
+// Check table creation
+echo "<br  />";
+if (mysqli_query($conn, $sql)) {
+    echo "Table CART created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+echo "<br  />";
+
+
 ?>

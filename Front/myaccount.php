@@ -85,13 +85,16 @@
 				</ul>
 			</div>
 		</div>
+
 	<div class="content">
-			<div class="list">
-				<?php get_product(); ?>
-			</div>
+			<?php get_customer() ?>
+			
 	</div>
+
 	<div class="footer">
+		<h1> (c) Arty a 42 Company </h1>
 	</div>
+
 	</div>
 </body>
 

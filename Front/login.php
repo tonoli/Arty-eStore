@@ -1,6 +1,4 @@
-<?php
 
-?>
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -31,3 +29,6 @@
 	  </div>
 	</div>
 </body>
+<?php
+
+?>
