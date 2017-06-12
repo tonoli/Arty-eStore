@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="home">
-		<p><a href="/Arty/Front">Home</a></p>
+		<p><a href="index.php">Home</a></p>
 	</div>
 	<div class="login-page">
 	  <div class="form">
@@ -24,7 +24,7 @@
 	      <input type="text" placeholder="Email"/>
 	      <input type="password" placeholder="Password"/>
 	      <button>login</button>
-	      <p class="message">Not registered? <a href="/Arty/Front/register.php">Create an account</a></p>
+	      <p class="message">Not registered? <a href="register.php">Create an account</a></p>
 	    </form>
 	  </div>
 	</div>

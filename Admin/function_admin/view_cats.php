@@ -4,7 +4,7 @@
   </tr>
   <tr align = "center" bgcolor = "#A8C7D6">
     <td><b>Category Id</</td>
-    <td><b>Categorie Title</td>
+    <td><b>Category Title</td>
     <td><b>Edit</td>
     <td><b>Delete</td>
   </tr>

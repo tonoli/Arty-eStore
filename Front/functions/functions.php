@@ -53,38 +53,39 @@ function isLogg(){
 
 
 // Display fucntions
-
-
-	function get_product(){
-		global $conn;
-		$get_products = "SELECT * FROM Products";
-		$querry = mysqli_query($conn, $get_products);
-		$i = 0;
-		while ($ret_products = mysqli_fetch_array($querry) && $i < 16)
-		{
-		$product_id = $ret_products['product_id'];
-		$product_title = $ret_products['product_title'];
-      	$product_cat = $ret_products['product_cat'];
-      	$product_author = $ret_products['product_author'];
-      	$product_image = $ret_products['product_image'];
-		$product_price = $ret_products['product_price'];
-		$product_desc = $ret_products['product_desc'];
-		$i++;
-		echo ($product_id);
-		echo "
-			<article class='list-item'>
-					<img src='$product_image' alt=''>
-					<div class='details'>
-
-						<h2>$product_title</h2>
-						<p>$product_author</p>
-						<p>$ $product_price</p>
-						<a href='index.php?product_id=$product_id'> <button>Add</button></a>
-					</div>
-			</article>
-			";
-		}
-	}
+  //
+  //
+	// function get_product(){
+	// 	global $conn;
+	// 	$get_products = "SELECT * FROM Products";
+	// 	$querry = mysqli_query($conn, $get_products);
+	// 	$i = 0;
+	// 	while ($ret_products = mysqli_fetch_array($querry) && $i < 16)
+	// 	{
+	// 	$product_id = $ret_products['product_id'];
+	// 	$product_title = $ret_products['product_title'];
+  //     	$product_cat = $ret_products['product_cat'];
+  //     	$product_author = $ret_products['product_author'];
+  //     	$product_image = $ret_products['product_image'];
+	// 	$product_price = $ret_products['product_price'];
+	// 	$product_desc = $ret_products['product_desc'];
+	// 	$i++;
+	// 	echo ($product_id);
+	// 	echo ($product_price);
+	// 	echo "
+	// 		<article class='list-item'>
+	// 				<img src='$product_image' alt=''>
+	// 				<div class='details'>
+  //
+	// 					<h2>$product_title</h2>
+	// 					<p>$product_author</p>
+	// 					<p>$ $product_price</p>
+	// 					<a href='index.php?product_id=$product_id'> <button>Add</button></a>
+	// 				</div>
+	// 		</article>
+	// 		";
+	// 	}
+	// }
 
 	function get_customer(){
 		global $conn;
@@ -95,7 +96,7 @@ function isLogg(){
 			$pip = $_SESSION['email'];
 			echo ("PAss : $pop et MAIL $pip");
 			echo "<h2> You are not registered yet!</h2>
-			<a href='/Arty/Front/register.php'><button>Please register</button></a>";
+			<a href='register.php'><button>Please register</button></a>";
 		}
 		else
 		{

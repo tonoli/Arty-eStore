@@ -28,7 +28,7 @@
 	<div class="wrapper">
 		<div class="header">
 			<div class="nav">
-				<a href="/Arty/Front/index.php"><img class="brand-logo" src="img/logo.png"></a>
+				<a href="index.php"><img class="brand-logo" src="img/logo.png"></a>
 				<div class = "nav-options">
 					<div classs="account-log">
 					<ul>
@@ -38,8 +38,8 @@
 								<input type="submit" name="Search" value="Search" />
 						</form>
 						</li>
-						<li><a href="/Arty/Front/register.php">Join</a></li>
-						<li><a href="/Arty/Front/login.php">Sign in</a></li>
+						<li><a href="register.php">Join</a></li>
+						<li><a href="login.php">Sign in</a></li>
 						<li><a href="#">About</a></li>
 					</ul>
 					</div>
@@ -47,7 +47,7 @@
 					<ul>
 						<li id="first"><a href="/cart">
 							<ul id="drop">
-								<li><a href="/Arty/Front/myaccount.php">My account</a></li>
+								<li><a href="myaccount.php">My account</a></li>
 								<li><a href="#">Saved items</a></li>
 								<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
 							</ul>
@@ -59,16 +59,17 @@
 		</div>
 		<div class="sider">
 			<div class="section-title">
-				<h2>Creations</h2>
+				<h2>Categories</h2>
 			</div>
 			<div class="products-nav">
 				<ul>
-				<li><a href="/paintings">Paintings</a></li>
+				<li><a href="/paintings">Oil Paintings</a></li>
 				<li><a href="/photography">Photography</a></li>
-				<li><a href="/drawings">Drawings</a></li>
+				<li><a href="/drawings">Drawing artwork</a></li>
 				<li><a href="/sculpture">Sculpture</a></li>
-				<li><a href="/collage">Collage</a></li>
-				<li><a href="/prints">Prints</a></li>
+				<li><a href="/acrylic">Acrylic paintings</a></li>
+				<li><a href="/mixed">Mixed Media artwork</a></li>
+				<li><a href="/watercolor">Watercolor</a></li>
 				</ul>
 			</div>
 			<div class="section-title">
@@ -76,18 +77,19 @@
 			</div>
 			<div class="products-nav">
 				<ul>
-				<li><a href="/paintings">Picasso</a></li>
+				<li><a href="/paintings">Peggy Trigg</a></li>
 				<li><a href="/photography">Van Gogh</a></li>
-				<li><a href="/drawings">Monet</a></li>
+				<li><a href="/drawings">Lucia Bergamini</a></li>
 				<li><a href="/sculpture">Rambrandt</a></li>
 				<li><a href="/collage">Matisse</a></li>
-				<li><a href="/prints">Gauguin</a></li>
+				<li><a href="/prints">Jessica Lindell</a></li>
+				<li><a href="/prints">Sarah Pollok</a></li>
 				</ul>
 			</div>
 		</div>
 	<div class="content">
 			<div class="list">
-				<?php get_product(); ?>
+				<?php include ("functions/add_product.php"); ?>
 			</div>
 	</div>
 	<div class="footer">

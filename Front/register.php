@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="home">
-		  <p><a href="/Arty/Front">Home</a></p>
+		  <p><a href="index.php">Home</a></p>
 	</div>
 	<div class="login-page">
 	  <div class="form">
@@ -29,7 +29,7 @@
 		  <input type="text" placeholder="Email address" name="email"/>
 		  <input type="text" placeholder="Phone number" name="phone"/>
 	      <button name="register" value="create_account">create</button>
-	      <p class="message">Already registered? <a href="/Arty/Front/login.php">Sign In</a></p>
+	      <p class="message">Already registered? <a href="login.php">Sign In</a></p>
 	    </form>
 	  </div>
 	</div>
@@ -57,7 +57,7 @@
 	$_SESSION['password']=$password;
 
 	echo "<script>alert('Account has been created successfully, Thanks!')</script>";
-	echo "<script>window.open('/Arty/Front/myaccount.php','_self')</script>";
+	echo "<script>window.open('myaccount.php','_self')</script>";
 
 	}
 	else {

@@ -28,7 +28,7 @@
 	<div class="wrapper">
 		<div class="header">
 			<div class="nav">
-				<a href="/Arty/Front/index.php"><img class="brand-logo" src="img/logo.png"></a>
+				<a href="index.php"><img class="brand-logo" src="img/logo.png"></a>
 				<div class = "nav-options">
 					<div classs="account-log">
 					<ul>
@@ -38,8 +38,8 @@
 								<input type="submit" name="Search" value="Search" />
 						</form>
 						</li>
-						<li><a href="/Arty/Front/register.php">Join</a></li>
-						<li><a href="/Arty/Front/login.php">Sign in</a></li>
+						<li><a href="register.php">Join</a></li>
+						<li><a href="login.php">Sign in</a></li>
 						<li><a href="#">About</a></li>
 					</ul>
 					</div>
