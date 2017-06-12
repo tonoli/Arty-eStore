@@ -1,6 +1,9 @@
 body{
-	/*background-image: url('../images/background_admin.jpg');*/
-	background: grey;
+	background-image: url('../images/background_admin.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	display:block;
 	vertical-align:baseline;
 }
@@ -29,20 +32,16 @@ h1{
 #left{
 	width: 725px;
 	height:650px;
-	/*background-image:url('../images/img1.jpg');*/
-	/*float:left;*/
-	margin-left: 42px;
 }
 #right{
 	width: 275px;
 	height:670px;
 	float:right;
-	border-left:4px groove orange;
 }
 #right a{
 	color:white;
 	text-align:left;
-	font-size:18px;
+	font-size:28px;
 	font-family:Palantino;
 	padding:4px;
 	margin:6px;

@@ -25,7 +25,7 @@ if (isset($_GET['edit_pro']))
   <script> tinymce.init({ selector:'textarea' }); </script>
 </head>
 <body>
-	<form action = "insert_product.php" method = "post" enctype = "multipart/form-data">
+	<form action = "" method = "post" enctype = "multipart/form-data">
 	<table align = "center" width = "727" height = "700" border = "5" bgcolor = "skyblue">
 	<tr align = "center">
 		<td colspan = "7">
@@ -34,7 +34,7 @@ if (isset($_GET['edit_pro']))
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Title:</b></td>
-		<td><input type= "text" name = "product_title" size = "40"  value = "<?php echo $pro_title;?>"required/></td>
+		<td><input type= "text" name = "product_title" size = "40"  value = "<?php echo $pro_title;?>"/></td>
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Category:</b> </td>
@@ -54,15 +54,15 @@ if (isset($_GET['edit_pro']))
 	</tr>
   <tr>
     <td align = "right"><b>Product Author:</b> </td>
-    <td><input type= "text" name = "product_author" size = "40"value = "<?php echo $pro_author;?>"required/></td>
+    <td><input type= "text" name = "product_author" size = "40"value = "<?php echo $pro_author;?>"/></td>
   </tr>
   <tr>
     <td align = "right"><b>Product Image:</b> </td>
-    <td><input type= "file" name = "product_image"/><img src "../product_images/<?php echo $pro_image; ?>" width = "50" height = "60"/></td>
+    <td><input type= "file" name = "product_image"/><img src = "../product_images/<?php echo $pro_image;?>"width= "60" height = "70"/></td>
     </tr>
 	<tr>
 		<td align = "right"><b>Product Price:</b> </td>
-		<td><input type= "text" name = "product_price" size = "10"value = "<?php echo $pro_price;?>"required/></td>
+		<td><input type= "text" name = "product_price" size = "10"value = "<?php echo $pro_price;?>"/></td>
 	</tr>
 	<tr>
 		<td align = "right"><b>Product Description:</b> </td>
@@ -82,7 +82,7 @@ if (isset($_GET['edit_pro']))
 <?php
 	if (isset($_POST['update_post']))
 	{
-    include ("../includes/db.php");
+    $update_id = $pro_id;
 		$product_title = $_POST['product_title'];
 		$product_cat = $_POST['product_cat'];
     $product_author = $_POST['product_author'];
@@ -92,15 +92,15 @@ if (isset($_GET['edit_pro']))
     $product_price = $_POST['product_price'];
 		$product_desc = $_POST['product_desc'];
     $product_active = $_POST['product_active'];
-    $table = "Products";
-		$update_product = "UPDATE Products SET product_cat = '$product_cat', product_title = 
+		$update_product = "UPDATE Products SET product_title = '$product_title',product_cat = '$product_cat', product_author = '$product_author',
+      product_image = '$product_image', product_price = '$product_price',product_desc = '$product_desc', product_active = '$product_active' WHERE product_id = '$update_id'";
     $update_pro = mysqli_query($conn, $update_product);
     if ($update_pro){
       echo "<script>alert('Product has been updated!')</script>";
-      echo "<script>window.open('index.php?update_product.php', '_self')</script>";
+      echo "<script>window.open('index.php?view_product.php', '_self')</script>";
     }
     else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $update_product . "<br>" . mysqli_error($conn);
     }
   }
 ?>

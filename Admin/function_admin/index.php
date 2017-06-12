@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_email']))
+{
+	echo "<script>window.open('log_in.php?not_admin=You are not an admin!', '_self') </script>";
+}
+else {
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -14,10 +23,9 @@
 			<h2 style = "text-align: center; color: white; font-family: Georgia"> Manage Content: </h2>
 				<a href= "index.php?insert_product"> Insert New Product</a></br>
 				<a href= "index.php?view_product"> View All Product</a></br>
-				<a href= "index.php?insert_cats"> Insert New Category</a></br>
+				<a href= "index.php?insert_cat"> Insert New Category</a></br>
 				<a href= "index.php?view_cats"> View All Categories</a></br>
 				<a href= "index.php?view_customers"> View Customers</a></br>
-				<a href= "index.php?view_orders"> View Orders</a></br>
 				<a href= "logout.php"> Admin Logout</a> </div></div>
 			<div id = "left">
 				<?php
@@ -27,7 +35,12 @@
 					include("view_product.php");
 				if (isset($_GET['edit_pro']))
 					include ("edit_pro.php");
+				if (isset($_GET['insert_cat']))
+					include ("insert_cat.php");
+				if (isset($_GET['view_cats']))
+					include ("view_cats.php");
 				?>
 			</div>
 </body>
 </html>
+<?php } ?>

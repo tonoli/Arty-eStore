@@ -72,7 +72,7 @@ include ("../includes/db.php");
     $product_author = $_POST['product_author'];
     $product_image = $_FILES['product_image']['name'];
     $product_image_tmp = $_FILES['product_image']['tmp_name'];
-    move_uploaded_file($product_image_tmp, "product_images/$product_image");
+    move_uploaded_file($product_image_tmp, "../product_images/$product_image");
     $product_price = $_POST['product_price'];
 		$product_desc = $_POST['product_desc'];
     $product_active = $_POST['product_active'];
@@ -85,7 +85,7 @@ include ("../includes/db.php");
       echo "<script>window.open('index.php?insert_product.php', '_self')</script>";
     }
     else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $insert_product . "<br>" . mysqli_error($conn);
     }
   }
 ?>

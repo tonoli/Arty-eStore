@@ -28,7 +28,7 @@
 	<div class="wrapper">
 		<div class="header">
 			<div class="nav">
-				<img class="brand-logo" src="img/logo.png">
+				<a href="/Arty/Front/index.php"><img class="brand-logo" src="img/logo.png"></a>
 				<div class = "nav-options">
 					<div classs="account-log">
 					<ul>
@@ -88,7 +88,7 @@
 
 	<div class="content">
 			<?php get_customer() ?>
-			
+
 	</div>
 
 	<div class="footer">
