@@ -91,8 +91,11 @@ function isLogg(){
 		$is_Logg= isLogg();
 		if (!$isLogg)
 		{
+			$pop = $_SESSION['password'];
+			$pip = $_SESSION['email'];
+			echo ("PAss : $pop et MAIL $pip");
 			echo "<h2> You are not registered yet!</h2>
-			<a href='/register.php'><button>Please register</button></a>";
+			<a href='/Arty/Front/register.php'><button>Please register</button></a>";
 		}
 		else
 		{

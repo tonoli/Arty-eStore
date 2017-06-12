@@ -44,9 +44,7 @@
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$hash = md5(rand (0, 1000));
 	$phone = $_POST['phone'];
-
 	$insert = "INSERT INTO Users (userip,first_name,last_name,email,password,phone,hash) VALUES ('$ip','$firstname','$lastname','$email','$password','$phone','$hash')";
-
 	$query = mysqli_query($conn, $insert);
 
 
@@ -56,14 +54,16 @@
 	if($check_cart==0){
 
 	$_SESSION['email']=$email;
+	$_SESSION['password']=$password;
 
 	echo "<script>alert('Account has been created successfully, Thanks!')</script>";
-	echo "<script>window.open('my_account.php','_self')</script>";
+	echo "<script>window.open('/Arty/Front/myaccount.php','_self')</script>";
 
 	}
 	else {
 
 	$_SESSION['email']=$email;
+	$_SESSION['password']=$password;
 
 	echo "<script>alert('Account has been created successfully, Thanks!')</script>";
 

@@ -28,7 +28,7 @@
 	<div class="wrapper">
 		<div class="header">
 			<div class="nav">
-				<img class="brand-logo" src="img/logo.png">
+				<a href="/Arty/Front/index.php"><img class="brand-logo" src="img/logo.png"></a>
 				<div class = "nav-options">
 					<div classs="account-log">
 					<ul>
@@ -47,7 +47,7 @@
 					<ul>
 						<li id="first"><a href="/cart">
 							<ul id="drop">
-								<li><a href="#">My account</a></li>
+								<li><a href="/Arty/Front/myaccount.php">My account</a></li>
 								<li><a href="#">Saved items</a></li>
 								<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
 							</ul>
