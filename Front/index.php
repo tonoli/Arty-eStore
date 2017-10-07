@@ -1,13 +1,11 @@
-<!DOCTYPE html>
 <?php
 	// Start the session
-	//session_start();
-
+	session_start();
 	// Includes functions and db
 	include("functions/functions.php");
-
 ?>
 
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>

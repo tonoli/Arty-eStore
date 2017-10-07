@@ -7,8 +7,8 @@ include ("cart.php");
 
 $servername = "localhost";
 $username = "root";
-$password = "password";
-$dbname = "art_store";
+$password = "root";
+$dbname = "arty_store";
 $table = "Products";
 
 // Connect to the DB
@@ -100,23 +100,18 @@ function isLogg(){
 		}
 		else
 		{
-			$get_user = "SELECT * FROM Users WHERE email='".$_SESSION['email']."' ";
+			$get_user = "SELECT * FROM Users WHERE login='".$_SESSION['email']."' ";
 			$querry = mysqli_query($conn, $get_user);
 			$ret_user = mysqli_fetch_array($querry);
-			$firstname = $ret_user['firstname'];
-			$lastname = $ret_user['lastname'];
-			$email = $ret_user['email'];
+			$login = $ret_user['login'];
 			$phone = $ret_user['phone'];
 
 			echo "
-				<h1> Hello $firstname, how are you doing?	</h1>
+				<h1> Hello $login, how are you doing?	</h1>
 				</br></br>
 				<p>Please find below your account informations:</p>
-				<p>Name : $firstname</p>
-				<p>Surname : $lastname</p>
-				<p>eMail : $email</p>
-				<p>Phone : $phone</p>
-				<a href='/my_account?delete=$email'><button>Delete account</button></a>
+        <p> Admin : 0 = NO, 1 = YES</p>
+				<a href='/my_account?delete=$login'><button>Delete account</button></a>
 			";
 		}
 	}

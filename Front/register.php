@@ -22,12 +22,9 @@
 	<div class="login-page">
 	  <div class="form">
 	    <form class="login-form" method="POST" enctype="multipart/form-data">
-	      <input type="text" placeholder="First Name" name="firstname" />
-		  <input type="text" placeholder="Last Name" name="lastname" />
+	      <input type="text" placeholder="Login" name="login" />
 	      <input type="password" placeholder="Password" name="password"/>
-		  <input type="password" placeholder="Repeat password"/>
 		  <input type="text" placeholder="Email address" name="email"/>
-		  <input type="text" placeholder="Phone number" name="phone"/>
 	      <button name="register" value="create_account">create</button>
 	      <p class="message">Already registered? <a href="login.php">Sign In</a></p>
 	    </form>
@@ -37,14 +34,11 @@
 
 <?php
 	if(isset($_POST['register'])){
-	$ip = getIp();
-	$firstname = $_POST['firstname'];
-	$lastname = $_POST['lastname'];
+	$login = $_POST['login'];
 	$email = $_POST['email'];
-	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-	$hash = md5(rand (0, 1000));
+	$password = hash(whirpool , $_POST['password']);
 	$phone = $_POST['phone'];
-	$insert = "INSERT INTO Users (userip,first_name,last_name,email,password,phone,hash) VALUES ('$ip','$firstname','$lastname','$email','$password','$phone','$hash')";
+	$insert = "INSERT INTO Users (userip, login, password, phone) VALUES ('$ip','$login','$password','$phone')";
 	$query = mysqli_query($conn, $insert);
 
 

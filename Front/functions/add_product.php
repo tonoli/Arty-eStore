@@ -1,27 +1,26 @@
+
 <table width = "735" align = "center" bgcolor = "grey">
 <tr align = "center">
   <?php
-    $get_pro = "select * from products";
+    $get_pro = "SELECT * FROM Products WHERE is_active = 1";
     $run_pro = mysqli_query($conn, $get_pro);
     $i = 0;
-    while ($row_pro = mysqli_fetch_array($run_pro))
-    {
-      $product_id = $row_pro['product_id'];
-      $pro_title = $row_pro['product_title'];
-      $pro_cat = $row_pro['product_cat'];
-      $pro_author = $row_pro['product_author'];
-      $pro_image = $row_pro['product_image'];
-      $pro_price = $row_pro['product_price'];
+    while ($product = mysqli_fetch_array($run_pro)){
+      $product_id = $product['id'];
+      $pro_name = $product['name'];
+      $pro_price = $product['price'];
+      $pro_descr = $product['description'];
+      $pro_image = $product['img_path'];
       $i++;
   ?>
   <tr bgcolor = "grey" align = "center">
   	 <article class='list-item'>
-       <h3><?php echo $pro_title."\n"; ?> </h3>
-    					<img src = "../../Admin/product_images/<?php echo $pro_image; ?>">
+       <h3><?php echo $pro_name."\n"; ?> </h3>
+    					<img src = "<?php echo $pro_image; ?>">
   			<div class='details'>
-				  <h2 style = "font-style:italic; padding:2px"><?php echo $pro_author."\n"; ?></h2>
+				  <h2 style = "font-style:italic; padding:2px"><?php echo $pro_descr."\n"; ?></h2>
   				<h2 style = "font-style:italic; padding:2px"><?php echo 'Price: '.$pro_price.'$'."\n"; ?></h2>
-					<a href='index.php?product_id=$product_id'> <button>Add to Cart</button></a>
+					<a href=" <?php "index.php?product_id=" . $product_id ?> "> <button>Add to Cart</button></a>
   			</div>
       </article>
   </tr>

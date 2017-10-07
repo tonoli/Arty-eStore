@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "art_store";
+$password = "root";
+$dbname = "arty_store";
 global $conn;
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_errno())

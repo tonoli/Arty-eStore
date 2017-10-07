@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "password";
-$dbname = "Arty_shop";
+$password = "root";
+$dbname = "arty_store";
 $table = "Cart";
 
 // Create connection
@@ -24,14 +24,14 @@ if (!$conn) {
 			$user_id = $_SESSION['email'];
 			$is_active = 1;
 		}
-		$check  = "SELECT * FROM Cart WHERE user_ip='$userip' AND product_id='$product_id'";
+		$check  = "SELECT * FROM Cart WHERE user_id='$userip' AND product_id='$product_id'";
 		$querry = mysqli_query($conn, $check);
 		if (mysqli_num_rows($querry) > 0)
 		{
 			exit;
 		}
 		else {
-			$instert = "INSERT INTO $table (product_id, user_ip, user_id, is_active) VALUES ($product_id, $user_ip, $user_id, $is_active)";
+			$instert = "INSERT INTO $table ('product_id', 'user_id', 'is_active') VALUES ($product_id, $user_id, $is_active)";
 			$querry = mysqli_query($conn, $instert);
 			echo "<script> window.open('index.php','_self')</script>";
 		}

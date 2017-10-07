@@ -21,7 +21,7 @@
 	<div class="login-page">
 	  <div class="form">
 	    <form class="login-form">
-	      <input type="text" placeholder="Email"/>
+	      <input type="text" placeholder="Login"/>
 	      <input type="password" placeholder="Password"/>
 	      <button>login</button>
 	      <p class="message">Not registered? <a href="register.php">Create an account</a></p>
