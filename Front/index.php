@@ -13,9 +13,9 @@
 	<title>Arty | Browse the Art</title>
 
 	<!-- Links -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link type="text/javascript" href="js/script.js">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Raleway" rel="stylesheet">
 
@@ -56,32 +56,32 @@
 			</div>
 		</div>
 		<div class="sider">
-			<div class="section-title">
+			<!--<div class="section-title">
 				<h2>Categories</h2>
 			</div>
 			<div class="products-nav">
 				<ul>
-				<li><a href="/paintings">Oil Paintings</a></li>
-				<li><a href="/photography">Photography</a></li>
-				<li><a href="/drawings">Drawing artwork</a></li>
-				<li><a href="/sculpture">Sculpture</a></li>
-				<li><a href="/acrylic">Acrylic paintings</a></li>
-				<li><a href="/mixed">Mixed Media artwork</a></li>
-				<li><a href="/watercolor">Watercolor</a></li>
-				</ul>
-			</div>
+				<li><a href="/Front/index.php?cat=paintings">Oil Paintings</a></li>
+				<li><a href="/Front/index.php?cat=/photography">Photography</a></li>
+				<li><a href="/Front/index.php?cat=/drawings">Drawing artwork</a></li>
+				<li><a href="/Front/index.php?cat=/sculpture">Sculpture</a></li>
+				<li><a href="/Front/index.php?cat=/acrylic">Acrylic paintings</a></li>
+				<li><a href="/Front/index.php?cat=/mixed">Mixed Media artwork</a></li>
+				<li><a href="/Front/index.php?cat=/watercolor">Watercolor</a></li>
+			</ul>
+			</div> -->
 			<div class="section-title">
 				<h2>Artists</h2>
 			</div>
 			<div class="products-nav">
 				<ul>
-				<li><a href="/paintings">Peggy Trigg</a></li>
-				<li><a href="/photography">Van Gogh</a></li>
-				<li><a href="/drawings">Lucia Bergamini</a></li>
-				<li><a href="/sculpture">Rambrandt</a></li>
-				<li><a href="/collage">Matisse</a></li>
-				<li><a href="/prints">Jessica Lindell</a></li>
-				<li><a href="/prints">Sarah Pollok</a></li>
+				<li><a href="/Front/index.php?cat=Picasso">Picasso</a></li>
+				<li><a href="/Front/index.php?cat=Van Gogh">Van Gogh</a></li>
+				<li><a href="/Front/index.php?cat=Banksy">Banksy</a></li>
+				<li><a href="/Front/index.php?cat=itonoli">itonoli</a></li>
+				<li><a href="/Front/index.php?cat=Matisse">Matisse</a></li>
+				<li><a href="/Front/index.php?cat=Jessica Lindell">Jessica Lindell</a></li>
+				<li><a href="/Front/index.php?cat=Sarah Pollok">Sarah Pollok</a></li>
 				</ul>
 			</div>
 		</div>

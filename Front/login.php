@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
 	<meta charset='utf-8'>
 	<title>Arty | Login</title>
@@ -12,7 +11,6 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Raleway|Roboto" rel="stylesheet">
-
 </head>
 <body>
 	<div class="home">
