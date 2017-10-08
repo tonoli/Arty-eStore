@@ -25,7 +25,7 @@ if (!$conn) {
 			$user_id = $_SESSION['email'];
 			$is_active = 1;
 		}
-		$check  = "SELECT * FROM Cart WHERE user_id='$userip' AND product_id='$product_id'";
+		$check  = "SELECT * FROM Cart WHERE user_id='$email' AND product_id='$product_id'";
 		$querry = mysqli_query($conn, $check);
 		if (mysqli_num_rows($querry) > 0)
 		{

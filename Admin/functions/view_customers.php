@@ -1,12 +1,12 @@
 
-<table width = "725" align = "center" bgcolor = "D0FFB4">
+<table width = "725" align = "center" bgcolor = "#FFFFFF">
   <tr align = "center">
     <td colspan = "6"><h2>View All Customers Here</h2></td>
   </tr>
-  <tr align = "center" bgcolor = "#A8C7D6">
+  <tr align = "center" bgcolor = "#808080">
     <td><b>Id</</td>
     <td><b>Is Admin</td>
-    <td><b>User IP</td>
+    <td><b>User email</td>
     <td><b>login</td>
     <td><b>is active</td>
   </tr>
@@ -19,17 +19,15 @@
     {
       $pro_id = $row_pro['id'];
 	   $pro_title = $row_pro['admin'];
-      $pro_cat = $row_pro['userip'];
-      $pro_pass = $row_pro['password'];
+      $pro_cat = $row_pro['email'];
       $pro_image = $row_pro['login'];
       $pro_price = $row_pro['is_active'];
       $i++;
   ?>
-  <tr bgcolor = "D0FFB4" align = "center">
+  <tr bgcolor = "#FFFFFF" align = "center">
     <td><?php echo $pro_id;?></td>
     <td><b><?php echo $pro_title;?></b></td>
     <td><?php echo $pro_cat;?></td>
-    <td><?php echo $pro_pass;?></td>
     <td><?php echo $pro_image;?></td>
     <td><?php echo $pro_price;?></td>
     <td><a href = "functions/delete_user.php?delete_user=<?php echo $pro_id;?>">Delete</a></td>

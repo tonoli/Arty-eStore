@@ -38,11 +38,10 @@
 	if(isset($_POST['register'])){
 	$login = $_POST['login'];
 	$email = $_POST['email'];
-	$ip = "34.4242.424.23";
 	$password = hash(whirlpool , $_POST['password']);
 	echo $password;
-	$insert = "INSERT INTO Users (`admin`, `userip`, `login`, `password`, `is_active`)
-	VALUES (0, '$ip','$login','$password', 1)";
+	$insert = "INSERT INTO Users (`admin`, `email`, `login`, `password`, `is_active`)
+	VALUES (0, '$email','$login','$password', 1)";
 	$query = mysqli_query($conn, $insert);
 	 echo "<script>alert('Account has been created successfully, Thanks!')</script>";
 	 echo "<script>window.open('index.php','_self')</script>";

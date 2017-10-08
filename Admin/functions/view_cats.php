@@ -1,8 +1,8 @@
-<table width = "725" align = "center" bgcolor = "D0FFB4">
+<table width = "725" align = "center" bgcolor = "#FFFFFF">
   <tr align = "center">
     <td colspan = "6"><h2>View All Categories Here</h2></td>
   </tr>
-  <tr align = "center" bgcolor = "#A8C7D6">
+  <tr align = "center" bgcolor = "#808080">
     <td><b>Category Id</</td>
     <td><b>Category Title</td>
     <td><b>Delete</td>
@@ -17,7 +17,7 @@
       $cat_id = $row_cat['id'];
       $i++;
   ?>
-  <tr bgcolor = "D0FFB4" align = "center">
+  <tr bgcolor = "FFFFFF" align = "center">
     <td><?php echo $cat_id;?></td>
     <td><b><?php echo $cat_title;?></b></td>
     <td><a href = "functions/delete_cat.php?delete_cat=<?php echo $cat_id;?>">Delete</a></td>

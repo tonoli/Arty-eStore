@@ -21,6 +21,7 @@ time, mark, audio, video {
 }
 
 body {
+	font-family: 'Raleway', sans-serif;
   line-height: 1;
   background: #f05a5b;
 }
@@ -44,6 +45,7 @@ q:before, q:after {
 	content: none;
 }
 table {
+	text-align: center;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -70,11 +72,14 @@ body {
 
 }
 
-
+.product_name {
+		text-align: center;
+    margin-bottom: 10px;
+}
 
 .wrapper {
 	max-width: 1000px;
-	height: 800px;
+	min-height: 1250px;
 	margin: auto;
 	background-color: #f05a5b;
 }
@@ -92,11 +97,9 @@ body {
 	height: auto;
 }
 
-
-
 .nav-options{
 	text-align: right;
-	margin-top: 10px;
+	margin-top: 30px;
 	margin-right: 10px;
 	float: right;
 }
@@ -115,6 +118,15 @@ body {
 	margin: 5px;
 	font-size: 15px;
 	font-family: 'Raleway', sans-serif;
+}
+
+
+.hello {
+		color: #1b1b1b !important;
+    padding: 8px !important;
+    margin: 5px !important;
+    font-size: 15px !important;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 .nav-options a:hover {
@@ -155,8 +167,9 @@ body {
 .sider {
 	background-color: #00B6F5;
 	float: left;
-	width: 200px;
-	height: 800px;
+	width: 20%;
+	min-height: 1250px;
+	height: 100%;
 }
 .section-title {
 	text-align: center;
@@ -190,12 +203,14 @@ body {
 
 .content {
 	background-color: grey;
-	float: left;
-	width: 800px;
-	height: 800px;
+	float: right;
+	width: 80%;
+	min-height: 1250px;
+	height: 100%;
 }
 
 .list {
+	text-align: center;
 	margin: auto;
 	margin-top: 10px;
 	width: 750px;
@@ -223,20 +238,70 @@ body {
 	font-size: 10px;
 
 }
+
+#add-btn {
+	cursor: pointer;
+  margin: 10px;
+  padding: 0.2em 0.5em;
+  border: 2px solid #000000;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+}
+
+
+/* ----- PANIER  ----- */
+
+.elem {
+
+}
+
+.delete  {
+	margin-left: 30px;
+	text-decoration: none;
+	color: grey;
+	padding: 8px;
+	margin-bottom: 15px;
+	border: solid grey 0.5px;
+	border-radius: 4px;
+	box-shadow: 4px 4px 5px rgba(136, 136, 136, 0.52);
+}
+
 .panier {
+	padding: 30px;
 	background-color: rgb(150, 170, 160);
 	text-align: center;
 }
 .panier div {
-	padding: 6px;
+	padding: 15px;
 	background-color: rgb(150, 170, 160);
-	margin: 5px;
+	margin: 25px;
 }
 .panier div:hover {
-	padding: 6px;
+	padding: 15px;
 	background-color: rgb(170, 190, 190);
 }
 
+.cart-title {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.cart-btn {
+
+	text-decoration: none;
+	color: white;
+	padding: 8px;
+	margin: 5px;
+	border: solid white 0.5px;
+	border-radius: 4px;
+	box-shadow: 4px 4px 5px rgba(136, 136, 136, 0.52);
+}
 
 /* ----- FOOTER ----- */
 

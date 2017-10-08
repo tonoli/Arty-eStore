@@ -22,15 +22,16 @@
 	  ?>
 	  <tr bgcolor = "grey" align = "center">
 	  	 <article class='list-item'>
-	       <h3><?php echo $pro_name."\n"; ?> </h3>
+	       <h3 class="product_name"><?php echo $pro_name."\n"; ?> </h3>
 	    					<img src = "<?php echo $pro_image; ?>">
 	  			<div class='details'>
 					  <h2 style = "font-style:italic; padding:2px"><?php echo $pro_descr."\n"; ?></h2>
 	  				<h2 style = "font-style:italic; padding:2px"><?php echo 'Price: '.$pro_price.'$'."\n"; ?></h2>
-						<a href="index.php?product_id=<?php echo $product_id ?>" > <button>Add to Cart</button></a>
+						<a href="index.php?product_id=<?php echo $product_id ?>" > <button id="add-btn">Add to Cart</button></a>
 	  			</div>
 	      </article>
 	  </tr>
+  </tr>
 	<?php }
 }?>
 </table>

@@ -27,11 +27,12 @@
 				<a href="index.php"><img class="brand-logo" src="img/logo.png"></a>
 			</div>
 		</div>
-		<div class="sider">
-    </div>
+
 	<div class="content">
-		  <h1> ERROR : it seems that the Data Base is not configured </h1>
-        <h2> Please run localhost:8080/install.php </h2>
+	</br></br>
+		  <h1 style="font-size:20px; text-align:center;"> ERROR : it seems that the Data Base is not configured </h1>
+			</br>
+        <h2 style="font-size:15px; text-align:center;"> Please run localhost:8080/install.php </h2>
 	</div>
 
 	</div>

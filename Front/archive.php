@@ -17,7 +17,8 @@
 		  	  $run_pan = mysqli_query($conn, $insert_pan);
 		  	  if ($run_pan)
 		  	  {
-		  	    echo "<script>alert('New Panier has been inserted!')</script>";
+						unset($_SESSION['commande']);
+		  	    echo "<script>alert('Votre commande has been inserted! Nous la traiterons dans les plus brefs delais')</script>";
 		  	    echo "<script>window.open('index.php', '_self')</script>";
 		  	  }
 		  	  else {

@@ -49,27 +49,28 @@
 						}
 
 						?>
+
+							<?php if($_SESSION['login']) {
+							echo ('<li class="hello"> Bonjour '.$_SESSION['login'] . '!</li>');}
+							else { echo '<li class="hello"> Bonjour Visiteur </li>';} ?>
+
+						<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 					</ul>
 					</div>
-					<div class="cart-bar">
+					<!-- <div class="cart-bar">
 					<ul>
 						<li id="first">
 							<ul id="drop">
-								<li>
-									<?php if($_SESSION['login']) {
-									echo "Bonjour " . $_SESSION['login'];}
-									else { echo "Not logged" ;} ?>
-								</li>
-								<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
+
 							</ul>
 						</li>
 					</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 		<div class="sider">
-			<<div class="section-title">
+			<div class="section-title">
 				<h2>Categories</h2>
 			</div>
 			<?php include ("functions/add_cat.php"); ?>
@@ -79,12 +80,10 @@
 			<div class="products-nav">
 				<ul>
 				<li><a href="/Front/index.php?cat=Picasso">Picasso</a></li>
-				<li><a href="/Front/index.php?cat=Van Gogh">Van Gogh</a></li>
+				<li><a href="/Front/index.php?cat=Manet">Manet</a></li>
 				<li><a href="/Front/index.php?cat=Banksy">Banksy</a></li>
 				<li><a href="/Front/index.php?cat=itonoli">itonoli</a></li>
-				<li><a href="/Front/index.php?cat=Matisse">Matisse</a></li>
-				<li><a href="/Front/index.php?cat=Jessica Lindell">Jessica Lindell</a></li>
-				<li><a href="/Front/index.php?cat=Sarah Pollok">Sarah Pollok</a></li>
+				<li><a href="/Front/index.php?cat=Courbet">Courbet</a></li>
 				</ul>
 			</div>
 		</div>

@@ -23,7 +23,7 @@
 		      	$run_pro = mysqli_query($conn, $get_pro);
 		      	$product = mysqli_fetch_array($run_pro);
 		        $total += $product['price'] * $value;
-				$panier = $panier . "<div>".$value." ".$product['name']."-".$product['description']." : ".$product['price']."€ <a href=\"panier.php?product_id=".$key."\"> Enlever</a></div>";
+				$panier = $panier . "<div class=\"elem\">".$value." ".$product['name']."-".$product['description']." : ".$product['price']."€ <a class=\"delete\" href=\"panier.php?product_id=".$key."\"> Delete</a></div>";
 			}
 		}
 	}
@@ -52,42 +52,35 @@
 				<a href="index.php"><img class="brand-logo" src="img/logo.png"></a>
 				<div class = "nav-options">
 					<div classs="account-log">
-					<ul>
-						<li class="search"><i class="fa fa-search" aria-hidden="true"></i>
-						</li>
+						<ul>
+							<li class="search"><i class="fa fa-search" aria-hidden="true"></i>
+							</li>
 
-						<?php
+							<?php
 
-						if($_SESSION['login']){
-							echo "<li><a href=\"logout.php\">Log Out</a></li>";
-						}
-						else{
-							echo '		<li><a href="register.php">Join</a></li>';
-							echo "<li><a href=\"login.php\">Sign in</a></li>";
-						}
+							if($_SESSION['login']){
+								echo "<li><a href=\"logout.php\">Log Out</a></li>";
+							}
+							else{
+								echo '<li><a href="register.php">Join</a></li>';
+								echo "<li><a href=\"login.php\">Sign in</a></li>";
+							}
 
-						?>
-					</ul>
-					</div>
-					<div class="cart-bar">
-					<ul>
-						<li id="first">
-							<ul id="drop">
-								<li>
-									<?php if($_SESSION['login']) {
-									echo "Bonjour " . $_SESSION['login'];}
-									else { echo "Not logged" ;} ?>
-								</li>
-								<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
-							</ul>
-						</li>
-					</ul>
+							?>
+
+								<?php if($_SESSION['login']) {
+								echo ('<li class="hello"> Bonjour '.$_SESSION['login'] . '</li>');}
+								else { echo '<li class="hello"> Bonjour Visiteur </li>';} ?>
+
+							<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="panier">
-			<h3 style="text-align: center;">Panier</h3>
+		</br>
+			<h3 class="cart-title">Mon panier</h3>
 				<?php echo $panier;
 				if ($boo == true)
 				{
@@ -95,8 +88,15 @@
 				<h4>Total de la commande : <?php echo $total; ?>€</h4>
 				<br/><br/>
 				<?php if($_SESSION['login']){ ?>
-					<a href="archive.php" style="text-decoration: none; padding = 7px; display: inline-block;">Save</a>
-				<?php }}?>
+					<a class="cart-btn" href="archive.php" style="text-decoration: none; padding = 7px; display: inline-block;">Valider ma commande</a>
+				<?php }
+				else { ?>
+					<a class="cart-btn" href="register.php" >Register pour valider ma commande</a>
+				<?php }}
+					if($_SESSION['commande']){
+						echo '<a class="cart-btn" href="vider.php" >Vider mon panier</a>';
+					}
+				?>
 				<br/><br/>
 		</div>
 	<div class="footer">

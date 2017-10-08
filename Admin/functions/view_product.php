@@ -1,8 +1,8 @@
-<table width = "725" align = "center" bgcolor = "D0FFB4">
+<table width = "725" align = "center" bgcolor = "#FFFFFF">
   <tr align = "center">
     <td colspan = "6"><h2>View All Products Here</h2></td>
   </tr>
-  <tr align = "center" bgcolor = "#A8C7D6">
+  <tr align = "center" bgcolor = "#808080">
     <td><b>Id</</td>
     <td><b>Title</td>
     <td><b>Category</td>
@@ -23,7 +23,7 @@
       $pro_price = $row_pro['price'];
       $i++;
   ?>
-  <tr bgcolor = "D0FFB4" align = "center">
+  <tr bgcolor = "#FFFFFF" align = "center">
     <td><?php echo $i;?></td>
     <td><b><?php echo $pro_title;?></b></td>
     <td><?php echo $pro_cat;?></td>

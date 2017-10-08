@@ -12,14 +12,14 @@
 			$art = mysqli_query($conn, "SELECT * FROM Products WHERE id='".$elem['product_id']."'");
 
 ?>
-<table width = "725" align = "center" bgcolor = "D0FFB4">
+<table width = "725" align = "center" bgcolor = "#FFFFFF">
 	<?php if ($old != $elem['user_login']) {
 		$old =  $elem['user_login'];?>
   <tr align = "center">
     <td colspan = "6"><h2>Commande de <?php echo $elem['user_login']; ?></h2></td>
   </tr>
   <?php } ?>
-  <tr align = "center" bgcolor = "#A8C7D6">
+  <tr align = "center" bgcolor = "#808080">
     <td><b>Id</</td>
     <td><b>Title</td>
     <td><b>Category</td>
@@ -37,7 +37,7 @@
       $pro_price = $row_pro['price'];
       $i++;
   ?>
-  <tr bgcolor = "D0FFB4" align = "center">
+  <tr bgcolor = "#FFFFFF" align = "center">
     <td><?php echo $i;?></td>
     <td><b><?php echo $pro_title;?></b></td>
     <td><?php echo $pro_cat;?></td>
