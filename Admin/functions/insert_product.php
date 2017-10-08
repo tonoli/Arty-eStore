@@ -77,8 +77,8 @@ include ("../includes/db.php");
 		$product_desc = $_POST['product_desc'];
     $product_active = $_POST['product_active'];
     $table = "Products";
-		$insert_product = "INSERT INTO $table(product_title, product_cat, product_author, product_image, product_price, product_desc, product_active)
-		values('$product_title', '$product_cat','$product_author', '$product_image', '$product_price','$product_desc', '$product_active')";
+		$insert_product = "INSERT INTO $table(price, name, categories, description, img_path, is_active)
+		values('$product_price','$product_author', '$product_cat','$product_desc', '$product_image', '$product_active')";
     $insert_pro = mysqli_query($conn, $insert_product);
     if ($insert_pro){
       echo "<script>alert('Product has been inserted!')</script>";

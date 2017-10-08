@@ -12,11 +12,13 @@
 
 	$panier = "";
 	$total = 0;
+	$boo = false;
 	if ($_SESSION['commande'])
 	{
 		foreach ($_SESSION['commande'] as $key => $value) {
 			if ($value > 0)
 			{
+				$boo = true;
 				$get_pro = "SELECT * FROM Products WHERE id='".$key."'";
 		      	$run_pro = mysqli_query($conn, $get_pro);
 		      	$product = mysqli_fetch_array($run_pro);
@@ -78,8 +80,15 @@
 		</div>
 		<div class="panier">
 			<h3 style="text-align: center;">Panier</h3>
-				<?php echo $panier; ?>
-				<h4>Total de la commande : <?php echo $total; ?></h4>
+				<?php echo $panier;
+				if ($boo == true)
+				{
+				?>
+				<h4>Total de la commande : <?php echo $total; ?>€</h4>
+				<br/><br/>
+				<a href="archive.php" style="text-decoration: none; padding = 7px; display: inline-block;">Save</a>
+			<?php }?>
+				<br/><br/>
 		</div>
 	<div class="footer">
 	</div>

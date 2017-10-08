@@ -61,20 +61,10 @@
 			</div>
 		</div>
 		<div class="sider">
-			<!--<div class="section-title">
+			<<div class="section-title">
 				<h2>Categories</h2>
 			</div>
-			<div class="products-nav">
-				<ul>
-				<li><a href="/Front/index.php?cat=paintings">Oil Paintings</a></li>
-				<li><a href="/Front/index.php?cat=/photography">Photography</a></li>
-				<li><a href="/Front/index.php?cat=/drawings">Drawing artwork</a></li>
-				<li><a href="/Front/index.php?cat=/sculpture">Sculpture</a></li>
-				<li><a href="/Front/index.php?cat=/acrylic">Acrylic paintings</a></li>
-				<li><a href="/Front/index.php?cat=/mixed">Mixed Media artwork</a></li>
-				<li><a href="/Front/index.php?cat=/watercolor">Watercolor</a></li>
-			</ul>
-			</div> -->
+			<?php include ("functions/add_cat.php"); ?>
 			<div class="section-title">
 				<h2>Artists</h2>
 			</div>
