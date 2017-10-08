@@ -28,6 +28,7 @@ if(isset($_SESSION['login']))
 							<a href= "index.php?insert_cat"> Insert New Category</a></br>
 							<a href= "index.php?view_cats"> View All Categories</a></br>
 							<a href= "index.php?view_customers"> View Customers</a></br>
+							<a href= "index.php?view_Panier"> View Panier</a></br>
 							<a href= "logout.php"> Admin Logout</a> </div></div>
 						<div id = "left">
 							<?php
@@ -41,6 +42,8 @@ if(isset($_SESSION['login']))
 								include ("functions/insert_cat.php");
 							if (isset($_GET['view_cats']))
 								include ("functions/view_cats.php");
+							if (isset($_GET['view_Panier']))
+								include ("functions/view_Panier.php");
 							?>
 						</div>
 			</body>
@@ -48,7 +51,7 @@ if(isset($_SESSION['login']))
 		<?php }
 		$i++;
 	}
-	header('Location: ../Front/login.php'); 
+	header('Location: ../Front/login.php');
 }
 else{
 

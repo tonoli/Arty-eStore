@@ -1,6 +1,7 @@
 <?php
 	session_start();
 
+	$user = $_SESSION['login'];
 	include ("../Admin/includes/db.php");
 	if (($_SESSION['commande'])
 	{
@@ -8,7 +9,7 @@
 			if ($value > 0)
 			{
 				$new_pan = $_SESSION['commande'];
-				$insert_pan = "INSERT INTO Panier values ('$key, $value')";
+				$insert_pan = "INSERT INTO Panier values ('$user, $key, $value')";
 		  	  $run_pan = mysqli_query($conn, $insert_pan);
 		  	  if ($run_pan)
 		  	  {
