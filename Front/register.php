@@ -1,5 +1,7 @@
 <?php
+	session_start();
 	include('functions/functions.php')
+
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -36,34 +38,15 @@
 	if(isset($_POST['register'])){
 	$login = $_POST['login'];
 	$email = $_POST['email'];
-	$password = hash(whirpool , $_POST['password']);
-	$phone = $_POST['phone'];
-	$insert = "INSERT INTO Users (userip, login, password, phone) VALUES ('$ip','$login','$password','$phone')";
+	$ip = "34.4242.424.23";
+	$password = hash(whirlpool , $_POST['password']);
+	echo $password;
+	$insert = "INSERT INTO Users (`admin`, `userip`, `login`, `password`, `is_active`)
+	VALUES (0, '$ip','$login','$password', 1)";
 	$query = mysqli_query($conn, $insert);
-
-
-	$sel_cart = "SELECT * FROM Cart WHERE userip='$ip'";
-	$run_cart = mysqli_query($conn, $sel_cart);
-	$check_cart = mysqli_num_rows($run_cart);
-	if($check_cart==0){
-
-	$_SESSION['email']=$email;
-	$_SESSION['password']=$password;
-
-	echo "<script>alert('Account has been created successfully, Thanks!')</script>";
-	echo "<script>window.open('myaccount.php','_self')</script>";
-
+	 echo "<script>alert('Account has been created successfully, Thanks!')</script>";
+	 echo "<script>window.open('index.php','_self')</script>";
+	$_SESSION['login'] = $login;
 	}
-	else {
 
-	$_SESSION['email']=$email;
-	$_SESSION['password']=$password;
-
-	echo "<script>alert('Account has been created successfully, Thanks!')</script>";
-
-	echo "<script>window.open('checkout.php','_self')</script>";
-
-
-	}
-}
 	?>

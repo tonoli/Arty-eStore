@@ -11,11 +11,16 @@ input {
 
 
 <?php
-include ("../includes/db.php");
+
 if (isset($_POST['add_cat']))
 {
+  $conn = mysqli_connect("localhost", "root", "root", "arty_store");
+  if (!$conn) {
+    header("../error_db.php");
+    echo ("Connection failed: " . mysqli_connect_error());
+  }
   $new_cat = $_POST['new_cat'];
-  $insert_cat = "INSERT INTO Categories(cat_title) values ('$new_cat')";
+  $insert_cat = "INSERT INTO Categories (`name`) VALUES ('$new_cat')";
   $run_cat = mysqli_query($conn, $insert_cat);
   if ($run_cat)
   {

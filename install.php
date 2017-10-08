@@ -166,7 +166,7 @@ echo "<br  />";
 
  $insertcart = "
  INSERT INTO `Cart` (`user_login`, `product_id`, `nbr`) VALUES
- (2, 2, 1);";
+ ('itonoli', 2, 1);";
 
  if (mysqli_query($conn, $insertcart)) {
      echo "Sucess - Table CART";

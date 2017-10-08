@@ -8,11 +8,9 @@
     <td><b>Category</td>
     <td><b>Image</td>
     <td><b>Price</td>
-    <td><b>Edit</td>
     <td><b>Delete</td>
   </tr>
   <?php
-    include("../includes/db.php");
     $get_pro = "select * from products";
     $run_pro = mysqli_query($conn, $get_pro);
     $i = 0;
@@ -20,7 +18,7 @@
     {
       $pro_id = $row_pro['id'];
 	  $pro_title = $row_pro['name'];
-      $pro_cat = $row_pro['categories'];
+      $pro_cat = $row_pro['categorie'];
       $pro_image = $row_pro['img_path'];
       $pro_price = $row_pro['price'];
       $i++;
@@ -29,10 +27,9 @@
     <td><?php echo $i;?></td>
     <td><b><?php echo $pro_title;?></b></td>
     <td><?php echo $pro_cat;?></td>
-    <td><img src = "../product_images/<?php echo $pro_image;?>"width= "60" height = "70"/></td>
+    <td><img src = "<?php echo $pro_image;?>"width= "60" height = "70"/></td>
     <td><?php echo $pro_price;?></td>
-    <td><a href = "index.php?edit_pro=<?php echo $pro_id; ?>">Edit</a></td>
-    <td><a href = "delete_pro.php?delete_pro=<?php echo $pro_id;?>">Delete</a></td>
+    <td><a href = "functions/delete_pro.php?delete_pro=<?php echo $pro_id;?>">Delete</a></td>
   </tr>
 <?php } ?>
 </table>

@@ -54,25 +54,33 @@
 					<div classs="account-log">
 					<ul>
 						<li class="search"><i class="fa fa-search" aria-hidden="true"></i>
-						<form id="search-bar" method="get" action="result.php" enctype="multipart/form-data">
-								<input type="text" name="user_query" placeholder="Search a product"/>
-								<input type="submit" name="Search" value="Search" />
-						</form>
 						</li>
-						<li><a href="register.php">Join</a></li>
-						<li><a href="login.php">Sign in</a></li>
-						<li><a href="#">About</a></li>
+
+						<?php
+
+						if($_SESSION['login']){
+							echo "<li><a href=\"logout.php\">Log Out</a></li>";
+						}
+						else{
+							echo '		<li><a href="register.php">Join</a></li>';
+							echo "<li><a href=\"login.php\">Sign in</a></li>";
+						}
+
+						?>
 					</ul>
 					</div>
 					<div class="cart-bar">
 					<ul>
-						<li id="first"><a href="/cart">
+						<li id="first">
 							<ul id="drop">
-								<li><a href="myaccount.php">My account</a></li>
-								<li><a href="#">Saved items</a></li>
+								<li>
+									<?php if($_SESSION['login']) {
+									echo "Bonjour " . $_SESSION['login'];}
+									else { echo "Not logged" ;} ?>
+								</li>
 								<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 							</ul>
-						</a></li>
+						</li>
 					</ul>
 					</div>
 				</div>
@@ -86,8 +94,9 @@
 				?>
 				<h4>Total de la commande : <?php echo $total; ?>€</h4>
 				<br/><br/>
-				<a href="archive.php" style="text-decoration: none; padding = 7px; display: inline-block;">Save</a>
-			<?php }?>
+				<?php if($_SESSION['login']){ ?>
+					<a href="archive.php" style="text-decoration: none; padding = 7px; display: inline-block;">Save</a>
+				<?php }}?>
 				<br/><br/>
 		</div>
 	<div class="footer">

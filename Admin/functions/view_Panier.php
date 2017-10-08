@@ -5,11 +5,11 @@
 		echo ("Connection failed: " . mysqli_connect_error());
 	}
 	$old = "";
-	$get_pan = "SELECT * FROM Panier";
+	$get_pan = "SELECT * FROM Cart";
 	$run_pan = mysqli_query($conn, $get_pan);
 	if ($run_pan){
 		while ($elem = mysqli_fetch_array($run_pan)){
-			$art =mysqli_query($conn, "SELECT * FROM Products WHERE id='".$elem['product_id']."'");
+			$art = mysqli_query($conn, "SELECT * FROM Products WHERE id='".$elem['product_id']."'");
 
 ?>
 <table width = "725" align = "center" bgcolor = "D0FFB4">
@@ -25,25 +25,23 @@
     <td><b>Category</td>
     <td><b>Image</td>
     <td><b>Price</td>
-    <td><b>Edit</td>
-    <td><b>Delete</td>
   </tr>
   <?php
     $i = 0;
-    while ($row_pro = mysqli_fetch_array($run_pro))
+    while ($row_pro = mysqli_fetch_array($art))
     {
-      $pro_id = $art['id'];
-      $pro_title = $art['name'];
-      $pro_cat = $art['categories'];
-      $pro_image = $art['img_path'];
-      $pro_price = $art['price'];
+      $pro_id = $row_pro['id'];
+      $pro_title = $row_pro['name'];
+      $pro_cat = $row_pro['categorie'];
+      $pro_image = $row_pro['img_path'];
+      $pro_price = $row_pro['price'];
       $i++;
   ?>
   <tr bgcolor = "D0FFB4" align = "center">
     <td><?php echo $i;?></td>
     <td><b><?php echo $pro_title;?></b></td>
     <td><?php echo $pro_cat;?></td>
-    <td><img src = "../product_images/<?php echo $pro_image;?>"width= "60" height = "70"/></td>
+    <td><img src = "<?php echo $pro_image;?>"width= "60" height = "70"/></td>
     <td><?php echo $pro_price;?></td>
   </tr>
 <?php } ?>

@@ -2,23 +2,39 @@
 
 session_start();
 
-if(!(isset($_SESSION['login']))){
-	header("../Front/login.php");
+if(!($_SESSION['login'])){
+
+
+	echo "<!DOCTYPE HTML>
+	<html>
+		<h1> You are not Administrator  </h1>
+		<a href=\"../\" > Click here to redirect </a>
+	</html>
+		";
+
 }
 else
 {
+
 	$conn = mysqli_connect("localhost", "root", "root", "arty_store");
 	if (!$conn) {
 		header("../error_db.php");
 		echo ("Connection failed: " . mysqli_connect_error());
 	}
+
 	$get_user = "SELECT * FROM Users WHERE login='" . $_SESSION['login'] . "'";
-	$run_users = mysqli_query($conn, $get_users);
-	$user = mysqli_fetch_array($run_users);
-		if($user['admin'] != 1){
-			header("../Front");
-		}
-}
+	$run_users = mysqli_query($conn, $get_user);
+	if ($run_users){
+		$user = mysqli_fetch_array($run_users);
+			if($user['admin'] != 1){
+				echo "<!DOCTYPE HTML>
+				<html>
+					<h1> You are not Administrator  </h1>
+					<a href=\"../\" > Click here to redirect </a>
+				</html>
+					";
+			}
+			else{
 		?>
 			<!DOCTYPE HTML>
 			<html>
@@ -40,11 +56,11 @@ else
 							<a href= "index.php?view_cats"> View All Categories</a></br>
 							<a href= "index.php?view_customers"> View Customers</a></br>
 							<a href= "index.php?view_Panier"> View Panier</a></br>
-							<a href= "logout.php"> Admin Logout</a> </div></div>
+							<a href= "../Front/logout.php"> Logout</a> </div></div>
 						<div id = "left">
 							<?php
-							if (isset($_GET['insert_product']))
-								include("functions/insert_product.php");
+							//if (isset($_GET['insert_product']))
+								// include("functions/insert_product.php");
 							if (isset($_GET['view_product']))
 								include("functions/view_product.php");
 							if (isset($_GET['edit_pro']))
@@ -55,7 +71,12 @@ else
 								include ("functions/view_cats.php");
 							if (isset($_GET['view_Panier']))
 								include ("functions/view_Panier.php");
+							if (isset($_GET['view_customers']))
+								include ("functions/view_customers.php");
+
 							?>
 						</div>
 			</body>
 			</html>
+
+		<?php }}} ?>

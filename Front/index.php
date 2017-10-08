@@ -36,14 +36,19 @@
 					<div classs="account-log">
 					<ul>
 						<li class="search"><i class="fa fa-search" aria-hidden="true"></i>
-						<form id="search-bar" method="get" action="result.php" enctype="multipart/form-data">
-								<input type="text" name="user_query" placeholder="Search a product"/>
-								<input type="submit" name="Search" value="Search" />
-						</form>
 						</li>
-						<li><a href="register.php">Join</a></li>
-						<li><a href="login.php">Sign in</a></li>
-						<li><a href="#">About</a></li>
+
+						<?php
+
+						if($_SESSION['login']){
+							echo "<li><a href=\"logout.php\">Log Out</a></li>";
+						}
+						else{
+							echo '<li><a href="register.php">Join</a></li>';
+							echo "<li><a href=\"login.php\">Sign in</a></li>";
+						}
+
+						?>
 					</ul>
 					</div>
 					<div class="cart-bar">

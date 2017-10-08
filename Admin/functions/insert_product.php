@@ -1,11 +1,8 @@
 <!DOCTYPE>
-<?php
-include ("../includes/db.php");
-?>
+
 <html>
 <head>
 <title> Inserting Product</title>
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=7esowxa7k837avq333arkqa7eenq77kzuk2ubcuky5sklbtr"></script>
   <script> tinymce.init({ selector:'textarea' }); </script>
 </head>
 <body>

@@ -5,6 +5,15 @@ session_start();
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+	<?php
+
+	include ("functions/functions.php");
+		if ($_GET['login'] != "" && $_GET['password'] != "" && $_GET['submit'] == "OK"){
+			if (auth($_GET['login'], $_GET['password'])){
+				echo '<meta http-equiv="refresh" content="0; URL=http://localhost:8080/">';
+			}
+		}
+		?>
 	<meta charset='utf-8'>
 	<title>Arty | Login</title>
 
@@ -31,12 +40,6 @@ session_start();
 	</div>
 </body>
 <?php
-	include ("functions/functions.php");
-		if ($_GET['login'] != "" && $_GET['password'] != "" && $_GET['submit'] == "OK"){
-			if (auth($_GET['login'], $_GET['password'])){
-				echo ("POP");
-				echo ($_SESSION['login']);
-			}
-		}
+
 
 ?>
