@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang='en'>
@@ -18,15 +21,22 @@
 	</div>
 	<div class="login-page">
 	  <div class="form">
-	    <form class="login-form">
-	      <input type="text" placeholder="Login"/>
-	      <input type="password" placeholder="Password"/>
-	      <button>login</button>
+	    <form class="login-form" method="GET">
+	      <input type="text" name="login" placeholder="Login"/>
+	      <input type="password" name="password" placeholder="Password"/>
+	      <button type="submit" name="submit" value="OK">login</button>
 	      <p class="message">Not registered? <a href="register.php">Create an account</a></p>
 	    </form>
 	  </div>
 	</div>
 </body>
 <?php
+	include ("functions/functions.php");
+		if ($_GET['login'] != "" && $_GET['password'] != "" && $_GET['submit'] == "OK"){
+			if (auth($_GET['login'], $_GET['password'])){
+				echo ("POP");
+				echo ($_SESSION['login']);
+			}
+		}
 
 ?>

@@ -15,9 +15,9 @@ $table = "Products";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    header("../error_db.php");
+    echo ("Connection failed: " . mysqli_connect_error());
 }
-
 
 // Other functions
 
@@ -37,83 +37,38 @@ return($ip);
 }
 
 function isLogg(){
-	if (isset($_SESSION['email']) AND isset($_SESSION['password']))
+	if (isset($_SESSION['login']))
 	{
-		$querry = mysql_query("SELECT * FROM Users WHERE email='".$_SESSION['email']."' ");
-		$reponse = mysql_fetch_assoc($querry);
+		$querry = mysqli_query($conn, "SELECT * FROM Users WHERE login='".$_SESSION['login']."' ");
+		$reponse = mysqli_fetch_assoc($querry);
 		mysqli_close();
-		$isLogg = ($reponse && $reponse['password'] === $_SESSION['password']) ? 1 : 0;
+		$isLogg = ($reponse) ? 1 : 0;
 	}
-	else
-	{
+	else {
 		$isLogg = 0;
 	}
 	return ($isLogg);
 }
 
-
-// Display fucntions
-  //
-  //
-	// function get_product(){
-	// 	global $conn;
-	// 	$get_products = "SELECT * FROM Products";
-	// 	$querry = mysqli_query($conn, $get_products);
-	// 	$i = 0;
-	// 	while ($ret_products = mysqli_fetch_array($querry) && $i < 16)
-	// 	{
-	// 	$product_id = $ret_products['product_id'];
-	// 	$product_title = $ret_products['product_title'];
-  //     	$product_cat = $ret_products['product_cat'];
-  //     	$product_author = $ret_products['product_author'];
-  //     	$product_image = $ret_products['product_image'];
-	// 	$product_price = $ret_products['product_price'];
-	// 	$product_desc = $ret_products['product_desc'];
-	// 	$i++;
-	// 	echo ($product_id);
-	// 	echo ($product_price);
-	// 	echo "
-	// 		<article class='list-item'>
-	// 				<img src='$product_image' alt=''>
-	// 				<div class='details'>
-  //
-	// 					<h2>$product_title</h2>
-	// 					<p>$product_author</p>
-	// 					<p>$ $product_price</p>
-	// 					<a href='index.php?product_id=$product_id'> <button>Add</button></a>
-	// 				</div>
-	// 		</article>
-	// 		";
-	// 	}
-	// }
-
-	function get_customer(){
-		global $conn;
-		$is_Logg= isLogg();
-		if (!$isLogg)
-		{
-			$pop = $_SESSION['password'];
-			$pip = $_SESSION['email'];
-			echo ("PAss : $pop et MAIL $pip");
-			echo "<h2> You are not registered yet!</h2>
-			<a href='register.php'><button>Please register</button></a>";
-		}
-		else
-		{
-			$get_user = "SELECT * FROM Users WHERE login='".$_SESSION['email']."' ";
-			$querry = mysqli_query($conn, $get_user);
-			$ret_user = mysqli_fetch_array($querry);
-			$login = $ret_user['login'];
-			$phone = $ret_user['phone'];
-
-			echo "
-				<h1> Hello $login, how are you doing?	</h1>
-				</br></br>
-				<p>Please find below your account informations:</p>
-        <p> Admin : 0 = NO, 1 = YES</p>
-				<a href='/my_account?delete=$login'><button>Delete account</button></a>
-			";
-		}
-	}
+function auth($login, $passwd){
+      $conn = mysqli_connect("localhost", "root", "root", "arty_store");
+      if (!$conn) {
+        header("../error_db.php");
+        echo ("Connection failed: " . mysqli_connect_error());
+      }
+      $get_user = "SELECT * FROM Users WHERE login='" . $login . "'";
+      $querry = mysqli_query($conn, $get_user);
+      if ($querry){
+        $reponse = mysqli_fetch_assoc($querry);
+        if (hash('whirlpool', $passwd) == $reponse['password']){
+          $_SESSION['status'] = $reponse['admin'];
+          $_SESSION['login'] = $reponse['login'];
+          return true;
+        }
+        else
+          return false;
+      }
+      return false;
+}
 
 ?>

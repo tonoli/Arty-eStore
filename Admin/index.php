@@ -1,13 +1,24 @@
 <?php
+
 session_start();
-if(isset($_SESSION['login']))
+
+if(!(isset($_SESSION['login']))){
+	header("../Front/login.php");
+}
+else
 {
-	$get_users = "SELECT * FROM Users WHERE admin = 1";
+	$conn = mysqli_connect("localhost", "root", "root", "arty_store");
+	if (!$conn) {
+		header("../error_db.php");
+		echo ("Connection failed: " . mysqli_connect_error());
+	}
+	$get_user = "SELECT * FROM Users WHERE login='" . $_SESSION['login'] . "'";
 	$run_users = mysqli_query($conn, $get_users);
-	$i = 0;
-	while ($user = mysqli_fetch_array($run_users)){
-		if($_SESSION['login'] == $user['login']){
-			break ;
+	$user = mysqli_fetch_array($run_users);
+		if($user['admin'] != 1){
+			header("../Front");
+		}
+}
 		?>
 			<!DOCTYPE HTML>
 			<html>
@@ -48,13 +59,3 @@ if(isset($_SESSION['login']))
 						</div>
 			</body>
 			</html>
-		<?php }
-		$i++;
-	}
-	header('Location: ../Front/login.php');
-}
-else{
-
-	header('Location: ../Front/login.php');
-}
- ?>

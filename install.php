@@ -62,6 +62,7 @@ $sql = "CREATE TABLE IF NOT EXISTS Products (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
 price INT(6) NOT NULL,
 name VARCHAR(50) NOT NULL,
+categorie VARCHAR(50),
 description TEXT NOT NULL,
 img_path CHAR(255) NOT NULL,
 is_active INT(1)
@@ -97,11 +98,9 @@ echo "<br  />";
 
 $sql = "CREATE TABLE IF NOT EXISTS Cart(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+user_login CHAR(50) NOT NULL,
 product_id INT(10) NOT NULL,
-user_id CHAR(50) NOT NULL,
-user_ip CHAR(50),
-is_active INT(1)
-)";
+nbr INT(10) NOT NULL )";
 
 // Check table creation
 if (mysqli_query($conn, $sql)) {
@@ -131,15 +130,15 @@ echo "<br  />";
 
  // Insert Porducts
  $insertproducts = "
- INSERT INTO `Products` (`price`, `name`, `description`, `img_path`, `is_active`) VALUES
- (42000, 'Picasso', 'accordionist', 'https://www.pablopicasso.org/images/paintings/accordionist.jpg', 1),
- (42500, 'Picasso', 'crucifixion', 'https://www.pablopicasso.org/images/paintings/crucifixion.jpg', 1),
- (42350, 'Picasso', 'avignon', 'https://www.pablopicasso.org/images/paintings/avignon.jpg', 1),
- (42150, 'Picasso', 'Guernica', 'https://www.pablopicasso.org/images/paintings/guernica3.jpg', 1),
- (42320, 'Picasso', 'The old guitarist', 'https://www.pablopicasso.org/images/paintings/the-old-guitarist.jpg', 1),
- (426254, 'Banksy', 'Keep your coins I want change', 'https://anticap.files.wordpress.com/2016/01/71sndsflebl-_sl1200_.jpg', 1),
- (42, 'Banksy', 'No future', 'https://streetartrat.files.wordpress.com/2015/03/nofuture.jpg', 1),
- (4, 'itonoli', 'Freedom of speach', 'https://mag.lesgrandsducs.com/wp-content/uploads/2016/10/IMG_6591-e1475698082510.jpg', 1);";
+ INSERT INTO `Products` (`price`, `name`, `categorie`,`description`, `img_path`, `is_active`) VALUES
+ (42000, 'Picasso', 'Cubism', 'accordionist', 'https://www.pablopicasso.org/images/paintings/accordionist.jpg', 1),
+ (42500, 'Picasso','Cubism', 'crucifixion', 'https://www.pablopicasso.org/images/paintings/crucifixion.jpg', 1),
+ (42350, 'Picasso','Cubism', 'avignon', 'https://www.pablopicasso.org/images/paintings/avignon.jpg', 1),
+ (42150, 'Picasso','Cubism', 'Guernica', 'https://www.pablopicasso.org/images/paintings/guernica3.jpg', 1),
+ (42320, 'Picasso','Cubism', 'The old guitarist', 'https://www.pablopicasso.org/images/paintings/the-old-guitarist.jpg', 1),
+ (426254, 'Banksy','Street Art', 'Keep your coins I want change', 'https://anticap.files.wordpress.com/2016/01/71sndsflebl-_sl1200_.jpg', 1),
+ (42, 'Banksy','Street Art', 'No future', 'https://streetartrat.files.wordpress.com/2015/03/nofuture.jpg', 1),
+ (4, 'itonoli','Realism', 'Freedom of speach', 'https://mag.lesgrandsducs.com/wp-content/uploads/2016/10/IMG_6591-e1475698082510.jpg', 1);";
 
  if (mysqli_query($conn, $insertproducts)) {
      echo "Sucess - Table PRODUCTS";
@@ -154,10 +153,7 @@ echo "<br  />";
  ('Street Art'),
  ('Cubism'),
  ('Realism'),
- ('18th Century'),
- ('19th Century'),
- ('20th Century'),
- ('21th Century');";
+ ('Impressionism');";
 
  if (mysqli_query($conn, $insertcategory)) {
      echo "Sucess - Table CATEGORIES";
@@ -169,7 +165,7 @@ echo "<br  />";
   // Instert Cart
 
  $insertcart = "
- INSERT INTO `Cart` (`product_id`, `user_id`, `is_active`) VALUES
+ INSERT INTO `Cart` (`user_login`, `product_id`, `nbr`) VALUES
  (2, 2, 1);";
 
  if (mysqli_query($conn, $insertcart)) {

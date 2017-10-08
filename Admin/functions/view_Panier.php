@@ -1,5 +1,9 @@
 <?php
-include("../includes/db.php");
+	$conn = mysqli_connect("localhost", "root", "root", "arty_store");
+	if (!$conn) {
+		header("../error_db.php");
+		echo ("Connection failed: " . mysqli_connect_error());
+	}
 	$old = "";
 	$get_pan = "SELECT * FROM Panier";
 	$run_pan = mysqli_query($conn, $get_pan);

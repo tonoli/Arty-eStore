@@ -48,13 +48,16 @@
 					</div>
 					<div class="cart-bar">
 					<ul>
-						<li id="first"><a href="/cart">
+						<li id="first">
 							<ul id="drop">
-								<li><a href="myaccount.php">My account</a></li>
-								<li><a href="#">Saved items</a></li>
+								<li>
+									<?php if($_SESSION['login']) {
+									echo "Bonjour " . $_SESSION['login'];}
+									else { echo "Not logged" ;} ?>
+								</li>
 								<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 							</ul>
-						</a></li>
+						</li>
 					</ul>
 					</div>
 				</div>
