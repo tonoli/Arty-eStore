@@ -3,6 +3,11 @@
 	session_start();
 	// Includes functions and db
 	include("functions/functions.php");
+	if ($_GET['product_id'])
+	{
+		$_SESSION['commande'][$_GET['product_id']] += 1;
+		header('Location: index.php');
+	}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +52,7 @@
 							<ul id="drop">
 								<li><a href="myaccount.php">My account</a></li>
 								<li><a href="#">Saved items</a></li>
-								<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+								<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 							</ul>
 						</a></li>
 					</ul>

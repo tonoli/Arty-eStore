@@ -1,13 +1,33 @@
-<!DOCTYPE html>
 <?php
 	// Start the session
-	//session_start();
-
+	session_start();
 	// Includes functions and db
 	include("functions/functions.php");
 
+	if ($_GET['product_id'])
+	{
+		$_SESSION['commande'][$_GET['product_id']] -= 1;
+		header('Location: panier.php');
+	}
+
+	$panier = "";
+	$total = 0;
+	if ($_SESSION['commande'])
+	{
+		foreach ($_SESSION['commande'] as $key => $value) {
+			if ($value > 0)
+			{
+				$get_pro = "SELECT * FROM Products WHERE id='".$key."'";
+		      	$run_pro = mysqli_query($conn, $get_pro);
+		      	$product = mysqli_fetch_array($run_pro);
+		        $total += $product['price'] * $value;
+				$panier = $panier . "<div>".$value." ".$product['name']."-".$product['description']." : ".$product['price']."€ <a href=\"panier.php?product_id=".$key."\"> Enlever</a></div>";
+			}
+		}
+	}
 ?>
 
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -15,12 +35,11 @@
 	<title>Arty | Browse the Art</title>
 
 	<!-- Links -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link type="text/javascript" href="js/script.js">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato|Raleway" rel="stylesheet">
-
 
 </head>
 
@@ -47,9 +66,9 @@
 					<ul>
 						<li id="first"><a href="/cart">
 							<ul id="drop">
-								<li><a href="#">My account</a></li>
+								<li><a href="myaccount.php">My account</a></li>
 								<li><a href="#">Saved items</a></li>
-								<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+								<li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 							</ul>
 						</a></li>
 					</ul>
@@ -57,44 +76,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="sider">
-			<!--<div class="section-title">
-				<h2>Creations</h2>
-			</div>
-			<div class="products-nav">
-				<ul>
-				<li><a href="/paintings">Paintings</a></li>
-				<li><a href="/photography">Photography</a></li>
-				<li><a href="/drawings">Drawings</a></li>
-				<li><a href="/sculpture">Sculpture</a></li>
-				<li><a href="/collage">Collage</a></li>
-				<li><a href="/prints">Prints</a></li>
-				</ul>
-			</div>-->
-			<div class="section-title">
-				<h2>Artists</h2>
-			</div>
-			<div class="products-nav">
-				<ul>
-				<li><a href="/paintings">Picasso</a></li>
-				<li><a href="/photography">Van Gogh</a></li>
-				<li><a href="/drawings">Monet</a></li>
-				<li><a href="/sculpture">Rambrandt</a></li>
-				<li><a href="/collage">Matisse</a></li>
-				<li><a href="/prints">Gauguin</a></li>
-				</ul>
-			</div>
+		<div class="panier">
+			<h3 style="text-align: center;">Panier</h3>
+				<?php echo $panier; ?>
+				<h4>Total de la commande : <?php echo $total; ?></h4>
 		</div>
-
-	<div class="content">
-			<?php get_customer() ?>
-
-	</div>
-
 	<div class="footer">
-		<h1> (c) Arty a 42 Company </h1>
 	</div>
-
 	</div>
 </body>
 

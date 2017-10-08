@@ -21,7 +21,7 @@
   			<div class='details'>
 				  <h2 style = "font-style:italic; padding:2px"><?php echo $pro_descr."\n"; ?></h2>
   				<h2 style = "font-style:italic; padding:2px"><?php echo 'Price: '.$pro_price.'$'."\n"; ?></h2>
-					<a href=" <?php "index.php?product_id=" . $product_id ?> "> <button>Add to Cart</button></a>
+					<a href="index.php?product_id=<?php echo $product_id ?>" > <button>Add to Cart</button></a>
   			</div>
       </article>
   </tr>

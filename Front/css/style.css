@@ -223,6 +223,19 @@ body {
 	font-size: 10px;
 
 }
+.panier {
+	background-color: rgb(150, 170, 160);
+	text-align: center;
+}
+.panier div {
+	padding: 6px;
+	background-color: rgb(150, 170, 160);
+	margin: 5px;
+}
+.panier div:hover {
+	padding: 6px;
+	background-color: rgb(170, 190, 190);
+}
 
 
 /* ----- FOOTER ----- */
