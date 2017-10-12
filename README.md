@@ -12,9 +12,11 @@ eCommerce project in PHP and Mysql for the DB
 ## Set up
 
 ### Install
-First you need to run an Apache server on your computer. You can for instance install <a href="https://www.mamp.info/en"> MAMP </a>
+First you need to run an Apache server on your computer. You can for instance install <a href="https://www.mamp.info/en"> MAMP </a>. In the configutation of MAMP you can define the port connected to the folder ```htdocs``` you can define **8080**. 
 
-Open your terminal
+Now fellows follow the following instructions : 
+
+* Open your terminal
 ```
 cd /Applications/MAMP/htdocs/
 ```
@@ -22,6 +24,6 @@ cd /Applications/MAMP/htdocs/
 git clone https://github.com/tonoli/Arty-eStore/ 
 ```
 
-* Vous lancez votre serveur et connectez vous au port 8080
+* Then you can start your server and get to the port 8080 ()
 * Dans votre navigateur préfére vous lancez http://localhost:8080/install.php 
 * Puis go sur http://localhost:8080/ et vous balader sur la boutique Arty! 
