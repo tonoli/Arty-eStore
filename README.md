@@ -15,8 +15,13 @@ eCommerce project in PHP and Mysql for the DB
 First you need to run an Apache server on your computer. You can for instance install <a href="https://www.mamp.info/en"> MAMP </a>
 
 Open your terminal
+```
 cd /Applications/MAMP/htdocs/
-git clone https://github.com/tonoli/Arty-eStore 
-Vous lancez votre serveur au port 8080
-Dans votre navigateur préfére vous lancez http://localhost:8080/install.php 
-puis vous pouvez aller sur http://localhost:8080/ et vous balader sur la boutique Arty! 
+```
+```
+git clone https://github.com/tonoli/Arty-eStore/ 
+```
+
+* Vous lancez votre serveur et connectez vous au port 8080
+* Dans votre navigateur préfére vous lancez http://localhost:8080/install.php 
+* Puis go sur http://localhost:8080/ et vous balader sur la boutique Arty! 
