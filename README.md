@@ -24,6 +24,7 @@ cd /Applications/MAMP/htdocs/
 git clone https://github.com/tonoli/Arty-eStore/ 
 ```
 
-* Then you can start your server and get to the port 8080 ()
-* Dans votre navigateur préfére vous lancez http://localhost:8080/install.php 
-* Puis go sur http://localhost:8080/ et vous balader sur la boutique Arty! 
+* Then you can start your server and get to the port 8080 
+* Lounch you favorite browser and go to the following URL http://localhost:8080/install.php 
+* Then finaly go to http://localhost:8080/
+* Enjoy!
