@@ -1,5 +1,5 @@
 # Arty-eStore
-eCommerce project in PHP and Mysql for the DB
+eCommerce project realized in 48h in Vanilla PHP and using MySQL for the Data Base
 
 ## Front-end 
 
